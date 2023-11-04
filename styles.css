@@ -1,16 +1,17 @@
 :root {
-    --main-dark: #293241;
-    --main-blue: #3d5a80;
-    --main-red: #ee6c4d;
-    --light-blue: #98c1d9;
-    --sky-blue: #e0fbfc;
-    --main-yellow: #fcbf49;
+    --bg-blue: #1D3557;
+    --dark-blue: #457B9D;
+    --light-blue: #A8DADC;
+    --light-orange: #ECB365;
+    --light-white: #F1FAEE;
+    --light-red: E63946;
   }
-
-/* Base reset */
-* {
+  
+  /* Base reset */
+  * {
     margin: 0;
     padding: 0;
+    font-size: 0;
   }
   
   /* box-sizing and font sizing */
@@ -30,55 +31,53 @@
     font-size: 62.5%;
   }
 
-.calculator-container{
-    width: 100%;
+body {
     height: 100vh;
-    font-size: 0;
-    background: var(--main-dark);
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center;;
+    background-color: var(--bg-blue);
 }
 
 .calculator {
-    background: var(--main-blue);
+    background-color: var(--dark-blue);
+    position: relative;
+    max-width: 300px;
     padding: 20px;
     border-radius: 10px;
 }
 
-.calculator form input {
-    height: 60px;
-    width: 60px;
-    border: 0;
-    outline: 0;
+.calculator-display input, 
+.calculator-button button {
+    font-size: 2rem;
     border-radius: 5px;
+    border: 0;
+    background-color: white;
+}
+
+.calculator-display input {
+    height: 60px;
+    width: 100%;
+    outline: none;
+    border: none;
+    text-align: right;
+    pointer-events: none;
+}
+.calculator-display {
+    margin-bottom: 10px;
+}
+
+.calculator-button {
+    display: grid;
+    grid-gap: 8px;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.calculator-button button {
+    padding: 10px;
     cursor: pointer;
 }
 
-.btn {
-    font-size: 2rem;
-    margin: 2px;
-    border: 0;
-}
-
-.del {
-  background-color: var(--main-red);
-  color: white;
-}
-
-.equal {
-  background-color: var(--main-yellow);
-}
-
-form .calculator-display {
-  display: flex;
-  justify-content: flex-end;
-  margin: 20px 0;
-}
-
-form .calculator-display input {
-  text-align: right;
-  flex: 1;
-  font-size: 45px;
-  cursor: default;
+.calculator-button button:active {
+    transform: scale(.9);
 }
