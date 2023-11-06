@@ -8,11 +8,12 @@ let output = "";
 let hasChar = false;
 
 const calculate = (btnValue) => {
-    
-    if (numberChar.includes(btnValue)) {
-        output = output*10 + +btnValue;
+    if (btnValue == "0" && output == "0"){
+        break;
     }
-
+    if (numberChar.includes(btnValue)) {
+        output += btnValue;
+    }
     if (operatorChar.includes(btnValue) && output !== "") {
         if (operatorChar.includes(output[output.length - 1])) {
             output = output.slice(0,-1);
