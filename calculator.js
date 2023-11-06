@@ -10,7 +10,7 @@ let hasChar = false;
 const calculate = (btnValue) => {
     
     if (numberChar.includes(btnValue)) {
-        output = outut*10 + +btnValue;
+        output = output*10 + +btnValue;
     }
 
     if (operatorChar.includes(btnValue) && output !== "") {
